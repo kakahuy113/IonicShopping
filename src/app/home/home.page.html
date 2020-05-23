@@ -1,20 +1,33 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" style="position: relative;">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    
+    <ion-buttons slot="primary">
+      <ion-button>
+        <h1>        
+          <a routerLink="/cart"> 
+            <ion-icon name="cart-sharp" style="padding-right: 10px;"></ion-icon>
+            <small style="border-radius: 50%;overflow: hidden;border: none;background-color: orange;top:0;right: 0;position: absolute;">{{shopService.data.length}}</small>
+          </a>
+        </h1>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Standard</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-tabs style="position: relative; overflow: hidden;">
+      <ion-tab-bar slot="top">
+      <nav> 
+        <label for="profile" (click)="beefPage()" class='fas fa-drumstick-bite'></label>
+        <label for="settings" (click)="milkPage()" class='fa fa-blender'></label>
+        <label for="posts"  (click)="giftPage()" class='fa fa-gift'></label>
+      </nav>
+    </ion-tab-bar>
+    </ion-tabs>
+     
   </div>
+
 </ion-content>

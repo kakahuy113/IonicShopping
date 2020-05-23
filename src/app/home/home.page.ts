@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router'
+import { ShoppingService } from '../services/shopping.service';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -7,6 +8,16 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private router: Router, private shopService: ShoppingService) {}
+  beefPage() {
+  this.router.navigate(['/home/beef'])
+  }
 
+  milkPage() {
+    this.router.navigate(['/home/milk'])
+  }
+
+  giftPage() {
+    this.router.navigate(['/home/gift'])
+  }
 }

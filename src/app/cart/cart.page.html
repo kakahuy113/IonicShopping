@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Your Card</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-list>
+    <ion-item *ngFor="let i of data">
+      <ion-thumbnail>
+        <img src="{{i.img}}" alt="">
+      </ion-thumbnail>
+      <ion-label>{{i.name}}</ion-label>
+    </ion-item>
+  </ion-list> -->
+  <ion-grid style="border: solid;">
+    <ion-row style="border: solid;">
+      <ion-col>Name</ion-col>
+      <ion-col>Price</ion-col>
+      <ion-col>Quantity</ion-col>
+      <ion-col>Total</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let i of data" style="border: solid;">
+      <ion-col>{{i.name}}</ion-col>
+      <ion-col>{{i.price}}</ion-col>
+      <ion-col>{{i.quantity}}</ion-col>
+      <ion-col>{{i.price * i.quantity}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col>Subtotal:</ion-col>
+      <ion-col>{{total}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-button color="warning" shape="round"><a routerLink="/check-out" style="text-decoration: none;" color="light">Check Out</a></ion-button>
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid>
+ 
+</ion-content>
