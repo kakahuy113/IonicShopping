@@ -42,9 +42,68 @@
       <ion-textarea></ion-textarea>
     </ion-item>
   </ion-list>
-
+  <h1 style="text-align: center;">Bang Ke Chi Tiet</h1>
+  <ion-list>
+    <ion-list-header>F&B</ion-list-header>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-label slot="end">
+        <ion-grid>
+          <ion-row>
+            <ion-col>Quantity</ion-col>
+            <ion-col>Price</ion-col>
+            <ion-col>Total</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-label>
+    </ion-item>
+    <div *ngFor="let d of data">
+      <ion-item >
+        <ion-label>{{d.name}}</ion-label>
+        <ion-label slot="end">
+          <ion-grid>
+            <ion-row>
+              <ion-col>{{d.quantity}}</ion-col>
+              <ion-col>{{d.price}}</ion-col>
+              <ion-col>{{d.quantity * d.price}}</ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-label>
+      </ion-item>
+    </div>
+  </ion-list>
   <div class="ion-padding">
     <ion-button expand="block" type="submit" (click)="purchase()" class="ion-no-margin">Purchase</ion-button>
   </div>
 </form>
+
+ <!--  <ion-list>
+    <ion-list-header>Drink</ion-list-header>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-label slot="end">
+        <ion-grid>
+          <ion-row>
+            <ion-col>Quantity</ion-col>
+            <ion-col>Price</ion-col>
+            <ion-col>Total</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-label>
+    </ion-item>
+    <div *ngFor="let d of data">
+      <ion-item *ngIf="d.catalog === drink">
+        <ion-label>{{d.name}}</ion-label>
+        <ion-label slot="end">
+          <ion-grid>
+            <ion-row>
+              <ion-col>{{d.quantity}}</ion-col>
+              <ion-col>{{d.price}}</ion-col>
+              <ion-col>{{d.quantity * d.price}}</ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-label>
+      </ion-item>
+    </div>
+  </ion-list> -->
 </ion-content>

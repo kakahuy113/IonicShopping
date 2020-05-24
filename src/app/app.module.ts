@@ -14,7 +14,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database'
 import { environment } from '../environments/environment'
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx'
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 @NgModule({
   declarations: [AppComponent,],
   entryComponents: [],

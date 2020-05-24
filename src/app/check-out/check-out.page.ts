@@ -4,7 +4,8 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
 import * as firebase from 'firebase'
 import { AlertController } from '@ionic/angular';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+import { ShoppingService } from '../services/shopping.service'
 @Component({
   selector: 'app-check-out',
   templateUrl: './check-out.page.html',
@@ -12,21 +13,29 @@ import { Router } from '@angular/router'
 })
 export class CheckOutPage implements OnInit {
   @ViewChild('map', { static: false }) mapElement: ElementRef;
+  google: any
   map: any;
   address: string;
 
   latitude: number;
   longitude: number;
+
+  data = [];
   constructor(
     public alertController: AlertController,
     private geolocation: Geolocation,
     private nativeGeocoder: NativeGeocoder,
-    private router: Router) { 
+    private router: Router,
+    private ShopService: ShoppingService) { 
   
   }
  
   
   ngOnInit() {
+    
+    this.data = this.ShopService.data
+    console.log(this.data);
+    
     this.loadMap();
   }
   loadMap() {
