@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { GiftPageRoutingModule } from './gift-routing.module';
 
 import { GiftPage } from './gift.page';
+import { FileSizeFormatPipe } from './file-size-format.pipe';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { GiftPage } from './gift.page';
     IonicModule,
     GiftPageRoutingModule
   ],
-  declarations: [GiftPage]
+  declarations: [GiftPage, FileSizeFormatPipe]
 })
 export class GiftPageModule {}
